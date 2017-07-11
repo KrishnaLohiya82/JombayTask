@@ -5,6 +5,7 @@ import com.google.gson.annotations.SerializedName;
 
 import io.realm.RealmList;
 import io.realm.RealmObject;
+import io.realm.annotations.PrimaryKey;
 
 /**
  * Created by Krishna on 10-07-2017.
@@ -13,35 +14,15 @@ import io.realm.RealmObject;
 public class UserModel  extends RealmObject{
 
 
-        @SerializedName("_id")
-        @Expose
         private String id;
-
         private String companyIds ;
-
-        @SerializedName("created_at")
-        @Expose
         private String createdAt;
-        @SerializedName("email")
-        @Expose
         private String email;
-        @SerializedName("is_suspended")
-        @Expose
-        private RealmString isSuspended;
-        @SerializedName("mobile")
-        @Expose
+        private String isSuspended;
         private String mobile;
-        @SerializedName("name")
-        @Expose
         private String name;
-        @SerializedName("role_ids")
-        @Expose
         private String roleIds;
-        @SerializedName("updated_at")
-        @Expose
         private String updatedAt;
-        @SerializedName("username")
-        @Expose
         private String username;
 
         public String getId() {
@@ -57,6 +38,7 @@ public class UserModel  extends RealmObject{
         }
 
         public void setCompanyIds(String companyIds) {
+
             this.companyIds = companyIds;
         }
 
@@ -76,11 +58,11 @@ public class UserModel  extends RealmObject{
             this.email = email;
         }
 
-        public RealmString getIsSuspended() {
+        public String getIsSuspended() {
             return isSuspended;
         }
 
-        public void setIsSuspended(RealmString isSuspended) {
+        public void setIsSuspended(String isSuspended) {
             this.isSuspended = isSuspended;
         }
 

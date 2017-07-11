@@ -9,6 +9,7 @@ import info.androidhive.retrofit.model.GetUserProfile.UserProfiles;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.Field;
+import retrofit2.http.FieldMap;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
@@ -22,7 +23,8 @@ public interface ApiInterface {
 
     @POST("/oauth/token.json")
     @Headers("Content-Type: application/x-www-form-urlencoded")
-    Call<GetAccessToken> getAccessToken(@Body TokenAccessRequest mTokenAccessRequest);
+    @FormUrlEncoded
+    Call<GetAccessToken> getAccessToken(@FieldMap Map<String , String> mMap);
 
 
 
@@ -37,6 +39,6 @@ public interface ApiInterface {
 
     @POST("oauth/token.json")
     @Headers("Content-Type:application/x-www-form-urlencoded")
-    @Multipart
-    Call<GetAccessToken> refreshToken(@Body Map<String,String> mMapForRefreshToken );
+    @FormUrlEncoded
+    Call<GetAccessToken> refreshToken(@FieldMap Map<String,String> mMapForRefreshToken );
 }
