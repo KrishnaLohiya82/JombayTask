@@ -15,7 +15,7 @@
     android:id="@+id/ll_main_signedin"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:visibility="visible">
+    android:visibility="gone">
     <RelativeLayout
         android:id="@+id/ll_getuser"
         android:layout_width="match_parent"
