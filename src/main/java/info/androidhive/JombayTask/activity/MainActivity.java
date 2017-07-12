@@ -119,7 +119,8 @@ public class MainActivity extends AppCompatActivity {
 
                     Toast.makeText(MainActivity.this, "Got access token", Toast.LENGTH_SHORT).show();
 
-
+                    _expireTime = _expireTime - 1;
+                    
                     final Handler handler = new Handler();
                     handler.postDelayed(new Runnable() {
                         @Override
